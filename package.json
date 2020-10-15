@@ -4,14 +4,31 @@
   "description": "A blog for a Random Broncos Fan",
   "scripts": {
     "build": "eleventy",
+    "debug": "DEBUG=* eleventy",
     "watch": "eleventy --watch",
     "serve": "eleventy --serve",
-    "start": "eleventy --serve",
-    "debug": "DEBUG=* eleventy"
+    "clean": "rm -rf _site",
+    "start": "npm-run-all clean --parallel dev:*",
+    "dev:postcss": "postcss css/style.css -d _site/css/ --config ./postcss.config.js -w",
+    "dev:eleventy": "eleventy --watch --quiet",
+    "dev:bsync": "browser-sync start --server ./_site -w --no-open --no-notify --no-ghost-mode"
   },
   "author": "RandomBroncosFan",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0"
+    "@11ty/eleventy": "^0.11.0",
+    "autoprefixer": "^10.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.1.1",
+    "postcss-cli": "^8.1.0",
+    "postcss-css-variables": "^0.17.0",
+    "postcss-nesting": "^7.0.1",
+    "postcss-partial-import": "^4.1.0",
+    "postcss-preset-env": "^6.7.0"
+  },
+  "dependencies": {
+    "postcss-clean": "^1.1.0",
+    "postcss-import": "^12.0.1",
+    "tailwindcss": "^1.9.2"
   }
 }
