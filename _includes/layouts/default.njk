@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="current">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,5 +9,14 @@
   </head>
   <body>
     <h1>{{ title or siteData.title }}</h1>
+    <button data-theme-switcher="original" type="button">Original Theme</button>
+    <button data-theme-switcher="classic" type="button">Classic Theme</button>
+    <button data-theme-switcher="current" type="button">Current Theme</button>
+    <script>
+      const themeSwitchers = document.querySelectorAll('button[data-theme-switcher]');
+      themeSwitchers.forEach(btn => btn.addEventListener('click', event => {
+        document.documentElement.dataset.theme = event.target.dataset.themeSwitcher
+      }));
+    </script>
   </body>
 </html>

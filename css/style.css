@@ -1,6 +1,4 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   --original--primary: #4e3428;
@@ -9,8 +7,45 @@
   --classic--alt: #001489;
   --current--primary: #002244;
   --current--alt: #fb4f14;
+
+  --theme--color__background: #fff;
+  --theme--color__text: var(--current--primary);
+  --theme--color__link: var(--current--alt);
 }
 
-h1 {
-  color: var(--classic--primary);
+/** purgecss start ignore */
+html[data-theme='original'] {
+  --theme--color__background: var(--original--primary);
+  --theme--color__text: #fff;
+  --theme--color__link: var(--original--alt);
 }
+
+html[data-theme='classic'] {
+  --theme--color__background: var(--classic--alt);
+  --theme--color__text: #fff;
+  --theme--color__link: var(--classic--primary);
+}
+/** purgecss end ignore */
+
+html[data-theme='current'] {
+  --theme--color__background: #fff;
+  --theme--color__text: var(--current--primary);
+  --theme--color__link: var(--current--alt);
+}
+
+body {
+  background-color: var(--theme--color__background);
+  color: var(--theme--color__text);
+}
+
+a,
+button {
+  color: var(--theme--color__link);
+}
+
+a {
+  text-decoration: none;
+}
+
+@tailwind components;
+@tailwind utilities;
