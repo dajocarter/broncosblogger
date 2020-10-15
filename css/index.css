@@ -1,1 +1,86 @@
-@import './style.css';
+@tailwind base;
+
+:root {
+  --original--primary: #4e3428;
+  --original--alt: #ffb524;
+  --classic--primary: #fa4616;
+  --classic--alt: #001489;
+  --current--primary: #002244;
+  --current--alt: #fb4f14;
+
+  --theme--color__background: #fff;
+  --theme--color__text: var(--current--primary);
+  --theme--color__link: var(--current--alt);
+  --theme-cursor: url('/img/logos/current.png'), auto;
+}
+
+/** purgecss start ignore */
+html[data-theme='original'] {
+  --theme--color__background: var(--original--primary);
+  --theme--color__text: #fff;
+  --theme--color__link: var(--original--alt);
+  --theme-cursor: url('/img/logos/original.png'), auto;
+}
+
+html[data-theme='classic'] {
+  --theme--color__background: var(--classic--alt);
+  --theme--color__text: #fff;
+  --theme--color__link: var(--classic--primary);
+  --theme-cursor: url('/img/logos/classic.png'), auto;
+}
+/** purgecss end ignore */
+
+html[data-theme='current'] {
+  --theme--color__background: #fff;
+  --theme--color__text: var(--current--primary);
+  --theme--color__link: var(--current--alt);
+  --theme-cursor: url('/img/logos/current.png'), auto;
+}
+
+body {
+  background-color: var(--theme--color__background);
+  color: var(--theme--color__text);
+}
+
+a,
+button {
+  color: var(--theme--color__link);
+}
+
+a:hover,
+button:hover {
+  cursor: var(--theme-cursor);
+}
+
+a {
+  text-decoration: none;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a {
+  font-weight: bold;
+}
+
+header span {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 90px;
+}
+
+header img {
+  flex: 0 0 auto;
+  width: auto;
+  height: 20px;
+  cursor: pointer;
+}
