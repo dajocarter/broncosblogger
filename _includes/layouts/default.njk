@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title or siteData.title }}</title>
     <meta name="description" content="{{ description or siteData.description }}" />
+    <script>
+      const themeSwitchers = document.querySelectorAll('button[data-theme-switcher]');
+      themeSwitchers.forEach(btn => btn.addEventListener('click', event => { 
+        document.documentElement.dataset.theme = event.target.dataset.themeSwitcher 
+      }));
+    </script>
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}" />
+    <link rel="icon" href="{{ '/img/favicon.ico' | url }}" />
   </head>
   <body>
     <h1>{{ title or siteData.title }}</h1>
     <button data-theme-switcher="original" type="button">Original Theme</button>
     <button data-theme-switcher="classic" type="button">Classic Theme</button>
     <button data-theme-switcher="current" type="button">Current Theme</button>
-    <script>
-      const themeSwitchers = document.querySelectorAll('button[data-theme-switcher]');
-      themeSwitchers.forEach(btn => btn.addEventListener('click', event => {
-        document.documentElement.dataset.theme = event.target.dataset.themeSwitcher
-      }));
-    </script>
   </body>
 </html>
