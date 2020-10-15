@@ -1,11 +1,17 @@
 module.exports = {
   future: {
-    // removeDeprecatedGapUtilities: true,
-    // purgeLayersByDefault: true,
-    // defaultLineHeights: true,
-    // standardFontWeights: true
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+    defaultLineHeights: true,
+    standardFontWeights: true
   },
-  purge: [],
+  purge: {
+    enabled: true,
+    content: [
+      './**/*.njk',
+      './**/*.html'
+    ]
+  },
   theme: {
     extend: {}
   },

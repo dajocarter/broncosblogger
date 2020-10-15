@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --original--primary: #4e3428;
+  --original--alt: #ffb524;
+  --classic--primary: #fa4616;
+  --classic--alt: #001489;
+  --current--primary: #002244;
+  --current--alt: #fb4f14;
+}
+
+h1 {
+  color: var(--classic--primary);
+}
