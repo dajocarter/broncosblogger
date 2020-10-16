@@ -1,3 +1,4 @@
+require('dotenv').config()
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
@@ -6,10 +7,10 @@ module.exports = {
     standardFontWeights: true
   },
   purge: {
-    enabled: true,
+    enabled: process.env.NODE_ENV === 'production',
     content: [
       './src/**/*.njk',
-      './src/**/*.html'
+      './src/**/*.md'
     ]
   },
   theme: {
