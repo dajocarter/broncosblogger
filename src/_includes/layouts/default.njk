@@ -9,29 +9,7 @@
     <link rel="icon" href="{{ '/img/favicon.ico' | url }}" />
   </head>
   <body class="py-2 px-4">
-    <header class="flex flex-row flex-wrap justify-between items-center">
-      <a href='/' class="font-bold">{{ siteData.title }}</a>
-      <span class="flex flex-row flex-no-wrap justify-between items-center w-24">
-        <img
-          src='/img/logos/original.png'
-          alt='Original Theme'
-          class="flex-none w-auto cursor-pointer"
-          data-theme-switcher="original"
-        />
-        <img
-          src='/img/logos/classic.png'
-          alt='Classic Theme'
-          class="flex-none w-auto cursor-pointer"
-          data-theme-switcher="classic"
-        />
-        <img
-          src='/img/logos/current.png'
-          alt='Current Theme'
-          class="flex-none w-auto cursor-pointer"
-          data-theme-switcher="current"
-        />
-      </span>
-    </header>
+    {% include 'header.njk' %}
     <main>
       {{ content | safe }}
     </main>
