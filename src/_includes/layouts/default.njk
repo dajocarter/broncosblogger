@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="current">
+<html lang="en" data-theme="">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,9 +36,13 @@
       {{ content | safe }}
     </main>
     <script>
+      const theme = localStorage.getItem('theme');
+      if (theme) { document.documentElement.dataset.theme = theme; }
       const themeSwitchers = document.querySelectorAll('header span img');
-      themeSwitchers.forEach(elt => elt.addEventListener('click', event => { 
-        document.documentElement.dataset.theme = event.target.dataset.themeSwitcher 
+      themeSwitchers.forEach(elt => elt.addEventListener('click', event => {
+        const newTheme = event.target.dataset.themeSwitcher;
+        localStorage.setItem('theme', newTheme);
+        document.documentElement.dataset.theme = newTheme;
       }));
     </script>
   </body>
