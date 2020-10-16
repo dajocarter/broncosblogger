@@ -1,12 +1,11 @@
 ---
 layout: default
-title: 'Random Broncos Fan'
 ---
 
 <article class="md:col-span-2">
   <h1>Blog Posts</h1>
   <ul>
-  {% for post in collections.post %}
+  {% for post in collections.blog %}
     <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
   {% endfor %}
   </ul>
