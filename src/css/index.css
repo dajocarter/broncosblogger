@@ -38,17 +38,3 @@ html[data-theme='current'] {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-a,
-button {
-  color: var(--theme--color__link);
-}
-
-a:hover,
-button:hover {
-  cursor: var(--theme-cursor);
-}
-
-a {
-  text-decoration: none;
-}

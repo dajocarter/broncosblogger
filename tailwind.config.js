@@ -35,8 +35,29 @@ module.exports = {
       backgroundColor: {
         theme: 'var(--theme--color__background)'
       }
+    },
+    typography: {
+      default: {
+        css: {
+          a: {
+            color: 'var(--theme--color__link)',
+            textDecoration: 'none',
+            '&:hover': {
+              cursor: 'var(--theme-cursor)'
+            }
+          },
+          button: {
+            color: 'var(--theme--color__link)',
+            '&:hover': {
+              cursor: 'var(--theme-cursor)'
+            }
+          }
+        }
+      }
     }
   },
   variants: {},
-  plugins: []
+  plugins: [
+    require('@tailwindcss/typography')
+  ]
 }
