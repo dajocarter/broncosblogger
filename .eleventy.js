@@ -3,6 +3,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/img')
 
   eleventyConfig.addLayoutAlias('default', 'layouts/default.njk')
+  eleventyConfig.addLayoutAlias('post', 'layouts/post.njk')
 
   return {
       dir: {
