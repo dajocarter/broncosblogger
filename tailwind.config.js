@@ -39,9 +39,9 @@ module.exports = {
     typography: {
       default: {
         css: {
+          color: 'var(--theme--color__text)',
           a: {
             color: 'var(--theme--color__link)',
-            textDecoration: 'none',
             '&:hover': {
               cursor: 'var(--theme-cursor)'
             }
@@ -51,6 +51,43 @@ module.exports = {
             '&:hover': {
               cursor: 'var(--theme-cursor)'
             }
+          },
+          strong: {
+            color: 'var(--theme--color__link)'
+          },
+          hr: {
+            borderColor: 'var(--theme--color__link)'
+          },
+          h1: {
+            color: 'var(--theme--color__link)'
+          },
+          h2: {
+            color: 'var(--theme--color__link)'
+          },
+          h3: {
+            color: 'var(--theme--color__link)'
+          },
+          h4: {
+            color: 'var(--theme--color__link)'
+          },
+          h5: {
+            color: 'var(--theme--color__link)'
+          },
+          h6: {
+            color: 'var(--theme--color__link)'
+          },
+          'ol li:before': {
+            color: 'var(--theme--color__link)'
+          },
+          'ul li:before': {
+            backgroundColor: 'var(--theme--color__link)'
+          },
+          blockquote: {
+            borderLeftColor: 'var(--theme--color__link)',
+            color: 'var(--theme--color__text)'
+          },
+          thead: {
+            color: 'var(--theme--color__link)'
           }
         }
       }

@@ -2,11 +2,11 @@
 layout: default
 ---
 
-<article class="prose md:col-span-2">
+<article class="md:col-span-2">
   <h1>Blog Posts</h1>
   <ul>
   {% for post in collections.blog %}
-    <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+    <li><a href="{{ post.url | url }}" class="no-underline">{{ post.data.title }}</a></li>
   {% endfor %}
   </ul>
 </article>
