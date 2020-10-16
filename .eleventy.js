@@ -1,6 +1,5 @@
 const { DateTime } = require('luxon')
 const markdownIt = require('markdown-it')
-const markdownItAnchor = require('markdown-it-anchor')
 const markdownItEmoji = require('markdown-it-emoji')
 
 module.exports = function (eleventyConfig) {
@@ -22,10 +21,6 @@ module.exports = function (eleventyConfig) {
     html: true,
     breaks: true,
     linkify: true
-  }).use(markdownItAnchor, {
-    permalink: true,
-    permalinkClass: "direct-link",
-    permalinkSymbol: '#'
   }).use(markdownItEmoji)
   eleventyConfig.setLibrary('md', markdownLibrary)
 
