@@ -58,29 +58,3 @@ a {
 
 @tailwind components;
 @tailwind utilities;
-
-header {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header a {
-  font-weight: bold;
-}
-
-header span {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 90px;
-}
-
-header img {
-  flex: 0 0 auto;
-  width: auto;
-  height: 20px;
-  cursor: pointer;
-}

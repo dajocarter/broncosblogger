@@ -5,19 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title or siteData.title }}</title>
     <meta name="description" content="{{ description or siteData.description }}" />
-    <script>
-      const themeSwitchers = document.querySelectorAll('button[data-theme-switcher]');
-      themeSwitchers.forEach(btn => btn.addEventListener('click', event => { 
-        document.documentElement.dataset.theme = event.target.dataset.themeSwitcher 
-      }));
-    </script>
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}" />
     <link rel="icon" href="{{ '/img/favicon.ico' | url }}" />
   </head>
-  <body>
+  <body class="py-2 px-4">
+    <header class="flex flex-row flex-wrap justify-between items-center">
+      <a href='/' class="font-bold">{{ siteData.title }}</a>
+      <span class="flex flex-row flex-no-wrap justify-between items-center w-24">
+        <img
+          src='/img/logos/original.png'
+          alt='Original Theme'
+          class="flex-none w-auto cursor-pointer"
+          data-theme-switcher="original"
+        />
+        <img
+          src='/img/logos/classic.png'
+          alt='Classic Theme'
+          class="flex-none w-auto cursor-pointer"
+          data-theme-switcher="classic"
+        />
+        <img
+          src='/img/logos/current.png'
+          alt='Current Theme'
+          class="flex-none w-auto cursor-pointer"
+          data-theme-switcher="current"
+        />
+      </span>
+    </header>
     <h1>{{ title or siteData.title }}</h1>
-    <button data-theme-switcher="original" type="button">Original Theme</button>
-    <button data-theme-switcher="classic" type="button">Classic Theme</button>
-    <button data-theme-switcher="current" type="button">Current Theme</button>
+    <script>
+      const themeSwitchers = document.querySelectorAll('header span img');
+      themeSwitchers.forEach(elt => elt.addEventListener('click', event => { 
+        document.documentElement.dataset.theme = event.target.dataset.themeSwitcher 
+      }));
+    </script>
   </body>
 </html>
