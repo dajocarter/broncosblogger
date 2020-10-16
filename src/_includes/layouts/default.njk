@@ -3,10 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ title or siteData.title }}</title>
+    <title>{{ siteData.title }}{{ " | " if title}}{{ title if title }}</title>
     <meta name="description" content="{{ description or siteData.description }}" />
     <link rel="stylesheet" href="{{ '/css/styles.css' | url }}" />
     <link rel="icon" href="{{ '/img/favicon.ico' | url }}" />
+    <meta property="og:site_name" content="{{ siteData.title }}" />
+    <meta property="og:title" content="{{ siteData.title }}{{ " | " if title}}{{ title if title }}" />
+    <meta property="og:description" content="{{ description or siteData.description }}" />
+    <meta property="twitter:creator" content="@broncosblogger" />
+    <meta property="twitter:title" content="{{ siteData.title }}{{ " | " if title}}{{ title if title }}" />
+    <meta property="twitter:description" content="{{ description or siteData.description }}" />
   </head>
   <body class="py-2 px-4 text-theme bg-theme">
     <main class="grid gap-5 md:grid-cols-2 md:grid-cols-3">
