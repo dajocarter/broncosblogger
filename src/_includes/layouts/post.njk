@@ -4,6 +4,6 @@ layout: default
 
 <article class="md:col-span-2">
   <h1>{{ title }}</h1>
-  <p>Posted on <time datetime="{{ date }}">{{ date }}</time></p>
+  <p>Posted on <time datetime="{{ page.date | htmlDateString }}">{{ page.date | humanDateString }}</time></p>
   {{ content | safe }}
 </article>
