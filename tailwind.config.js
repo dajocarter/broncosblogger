@@ -30,7 +30,8 @@ module.exports = {
         }
       },
       textColor: {
-        theme: 'var(--theme--color__text)'
+        theme: 'var(--theme--color__text)',
+        link: 'var(--theme--color__link)'
       },
       backgroundColor: {
         theme: 'var(--theme--color__background)'

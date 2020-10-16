@@ -6,7 +6,7 @@ layout: default
   <h1>Blog Posts</h1>
   <ul>
   {% for post in collections.blog %}
-    <li><a href="{{ post.url | url }}" class="no-underline">{{ post.data.title }}</a></li>
+    <li><a href="{{ post.url | url }}" class="no-underline text-link">{{ post.data.title }}</a></li>
   {% endfor %}
   </ul>
 </article>
