@@ -1,7 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/** purgecss start ignore */
 :root {
   --original--primary: #4e3428;
   --original--alt: #ffb524;
@@ -16,7 +13,6 @@
   --theme-cursor: url('/img/logos/current.png'), auto;
 }
 
-/** purgecss start ignore */
 html[data-theme='original'] {
   --theme--color__background: var(--original--primary);
   --theme--color__text: #fff;
@@ -39,10 +35,9 @@ html[data-theme='current'] {
 }
 /** purgecss end ignore */
 
-body {
-  background-color: var(--theme--color__background);
-  color: var(--theme--color__text);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 a,
 button {
