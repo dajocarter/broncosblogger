@@ -1,4 +1,6 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --original--primary: #4e3428;
@@ -55,6 +57,3 @@ button:hover {
 a {
   text-decoration: none;
 }
-
-@tailwind components;
-@tailwind utilities;

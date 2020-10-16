@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title or siteData.title }}</title>
     <meta name="description" content="{{ description or siteData.description }}" />
-    <link rel="stylesheet" href="{{ '/css/index.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/css/styles.css' | url }}" />
     <link rel="icon" href="{{ '/img/favicon.ico' | url }}" />
   </head>
   <body class="py-2 px-4">
@@ -32,7 +32,9 @@
         />
       </span>
     </header>
-    <h1>{{ title or siteData.title }}</h1>
+    <main>
+      {{ content | safe }}
+    </main>
     <script>
       const themeSwitchers = document.querySelectorAll('header span img');
       themeSwitchers.forEach(elt => elt.addEventListener('click', event => { 

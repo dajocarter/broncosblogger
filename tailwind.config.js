@@ -8,8 +8,8 @@ module.exports = {
   purge: {
     enabled: true,
     content: [
-      './**/*.njk',
-      './**/*.html'
+      './src/**/*.njk',
+      './src/**/*.html'
     ]
   },
   theme: {
