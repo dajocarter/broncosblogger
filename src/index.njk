@@ -3,11 +3,11 @@ layout: default
 title: 'Random Broncos Fan'
 ---
 
-<div>
+<article>
   <h1>Blog Posts</h1>
   <ul>
   {% for post in collections.post %}
     <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
   {% endfor %}
   </ul>
-</div>
+</article>

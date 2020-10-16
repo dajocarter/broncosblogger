@@ -9,9 +9,12 @@
     <link rel="icon" href="{{ '/img/favicon.ico' | url }}" />
   </head>
   <body class="py-2 px-4">
-    {% include 'header.njk' %}
     <main>
+      {% include 'header.njk' %}
+
       {{ content | safe }}
+
+      {% include 'footer.njk' %}
     </main>
     <script>
       const theme = localStorage.getItem('theme');
