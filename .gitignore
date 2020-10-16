@@ -1,3 +1,5 @@
 node_modules
 # output directory
 _site
+# auto generated css file
+src/css/styles.css
