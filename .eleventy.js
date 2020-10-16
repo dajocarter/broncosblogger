@@ -1,4 +1,7 @@
 const { DateTime } = require('luxon')
+const markdownIt = require('markdown-it')
+const markdownItAnchor = require('markdown-it-anchor')
+const markdownItEmoji = require('markdown-it-emoji')
 
 module.exports = function (eleventyConfig) {
   // Pass through assets to generated website
@@ -14,6 +17,17 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('htmlDateString', date => {
     return DateTime.fromJSDate(date, { zone: 'utc' }).toFormat('yyyy-LL-dd')
   })
+  // MarkDown overrides
+  let markdownLibrary = markdownIt({
+    html: true,
+    breaks: true,
+    linkify: true
+  }).use(markdownItAnchor, {
+    permalink: true,
+    permalinkClass: "direct-link",
+    permalinkSymbol: '#'
+  }).use(markdownItEmoji)
+  eleventyConfig.setLibrary('md', markdownLibrary)
 
   return { // data and includes is relative to input
     dir: {
