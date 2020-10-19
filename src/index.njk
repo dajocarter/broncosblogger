@@ -1,12 +1,53 @@
 ---
 layout: default
+pagination:
+  data: collections.blog
+  size: 5
+  reverse: true
+  alias: posts
+permalink: "{% if pagination.pageNumber > 0 %}/blog/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 ---
 
 <article class="md:col-span-2">
   <h1>Blog Posts</h1>
   <ul>
-  {% for post in collections.blog | reverse %}
-    <li><a href="{{ post.url | url }}" class="no-underline text-link">{{ post.data.title }}</a></li>
-  {% endfor %}
+    {% for post in posts %}
+      <li>
+        <a href="{{ post.url }}" class="no-underline text-link">{{ post.data.title }}</a>
+      </li>
+    {% endfor %}
   </ul>
+  <nav aria-labelledby='blog-navigation'>
+    <ol>
+      <li>
+        {% if page.url != pagination.href.first %}
+          <a class="text-link" href="{{ pagination.href.first }}">First</a>
+        {% else %}First{% endif %}
+      </li>
+      <li>
+        {% if pagination.href.previous %}
+          <a class="text-link" href="{{ pagination.href.previous }}">Previous</a>
+        {% else %}Previous{% endif %}
+      </li>
+      {% for page in pagination.pages %}
+        <li>
+          <a
+            class="text-link"
+            href="{{ pagination.hrefs[ loop.index0 ] }}"
+            {% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}
+          >Page {{ loop.index }}</a>
+        </li>
+      {% endfor %}
+      <li>
+        {% if pagination.href.next %}
+          <a class="text-link" href="{{ pagination.href.next }}">Next</a>
+        {% else %}Next{% endif %}
+      </li>
+      <li>
+        {% if page.url != pagination.href.last %}
+          <a class="text-link" href="{{ pagination.href.last }}">Last</a>
+        {% else %}Last{% endif %}
+      </li>
+    </ol>
+  </nav>
 </article>
