@@ -7,6 +7,7 @@ module.exports = function (eleventyConfig) {
   // Pass through assets to generated website
   eleventyConfig.addPassthroughCopy('./src/css/styles.css')
   eleventyConfig.addPassthroughCopy('./src/img')
+  eleventyConfig.addPassthroughCopy('./src/js')
   // Create aliases for layouts to not have to specify directory everywhere
   eleventyConfig.addLayoutAlias('default', 'layouts/default.njk')
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk')

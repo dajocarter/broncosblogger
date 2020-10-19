@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="/js/index.js"></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="icon" href="/img/favicon.ico" />
     <title>{{ siteData.title }}{{ " | " if title}}{{ title if title }}</title>
     <meta name="description" content="{{ description or siteData.description }}" />
-    <link rel="stylesheet" href="{{ '/css/styles.css' | url }}" />
-    <link rel="icon" href="{{ '/img/favicon.ico' | url }}" />
     <meta property="og:site_name" content="{{ siteData.title }}" />
     <meta property="og:title" content="{{ siteData.title }}{{ " | " if title}}{{ title if title }}" />
     <meta property="og:description" content="{{ description or siteData.description }}" />
@@ -24,15 +25,5 @@
 
       {% include 'footer.njk' %}
     </main>
-    <script>
-      const theme = localStorage.getItem('theme');
-      if (theme) { document.documentElement.dataset.theme = theme; }
-      const themeSwitchers = document.querySelectorAll('header span img');
-      themeSwitchers.forEach(elt => elt.addEventListener('click', event => {
-        const newTheme = event.target.dataset.themeSwitcher;
-        localStorage.setItem('theme', newTheme);
-        document.documentElement.dataset.theme = newTheme;
-      }));
-    </script>
   </body>
 </html>
