@@ -1,6 +1,7 @@
 const { DateTime } = require('luxon')
 const markdownIt = require('markdown-it')
 const markdownItEmoji = require('markdown-it-emoji')
+const htmlMinifier = require('html-minifier')
 
 module.exports = function (eleventyConfig) {
   // Pass through assets to generated website
@@ -23,6 +24,17 @@ module.exports = function (eleventyConfig) {
     linkify: true
   }).use(markdownItEmoji)
   eleventyConfig.setLibrary('md', markdownLibrary)
+  // Minify HTML
+  eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
+    if (outputPath.endsWith('.html')) {
+      return htmlMinifier.minify(content, {
+        collapseWhitespace: true,
+        removeComments: true,
+        useShortDoctype: true
+      })
+    }
+    return content
+  })
 
   return { // data and includes is relative to input
     dir: {
