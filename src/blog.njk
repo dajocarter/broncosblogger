@@ -18,37 +18,70 @@ permalink: "/blog/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumbe
       </li>
     {% endfor %}
   </ul>
+
+  {% if pagination.pages.length > 1 %}
   <nav aria-labelledby='blog-navigation'>
-    <ol>
-      <li>
-        {% if page.url != pagination.href.first %}
-          <a class="text-link" href="{{ pagination.href.first }}">First</a>
-        {% else %}First{% endif %}
+    <ol class="flex flex-row justify-center items-center self-center">
+
+      {% if pagination.href.previous %}
+      <li class="text-lg flex-grow previous">
+        <a class="block text-center border border-solid border-link text-theme" href="{{ pagination.href.previous }}">«</a>
       </li>
-      <li>
-        {% if pagination.href.previous %}
-          <a class="text-link" href="{{ pagination.href.previous }}">Previous</a>
-        {% else %}Previous{% endif %}
+      {% endif %}
+
+      {% if pagination.pageNumber > 1 %}
+      <li class="text-lg flex-grow first">
+        <a class="block text-center border border-solid border-link text-theme"
+          href="{{ pagination.href.first }}"
+        >1</a>
       </li>
-      {% for page in pagination.pages %}
-        <li>
-          <a
-            class="text-link"
-            href="{{ pagination.hrefs[ loop.index0 ] }}"
-            {% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}
-          >Page {{ loop.index }}</a>
-        </li>
-      {% endfor %}
-      <li>
-        {% if pagination.href.next %}
-          <a class="text-link" href="{{ pagination.href.next }}">Next</a>
-        {% else %}Next{% endif %}
+      {% endif %}
+
+      {% if pagination.pageNumber > 2 %}
+      <li class="text-lg flex-grow"><a class="block text-center border border-solid border-link text-theme">...</a></li>
+      {% endif %}
+
+      {% if pagination.pageNumber > 0 %}
+      <li class="text-lg flex-grow current-prev">
+        <a class="block text-center border border-solid border-link text-theme"
+          href="{{ pagination.hrefs[ pagination.pageNumber - 1 ] }}"
+        >{{ pagination.pageNumber }}</a>
       </li>
-      <li>
-        {% if page.url != pagination.href.last %}
-          <a class="text-link" href="{{ pagination.href.last }}">Last</a>
-        {% else %}Last{% endif %}
+      {% endif %}
+
+      <li class="text-lg flex-grow current">
+        <a class="block text-center border border-solid border-link text-theme bg-link"
+          href="{{ pagination.hrefs[ pagination.pageNumber ] }}"
+          aria-current="page"
+        >{{ pagination.pageNumber + 1 }}</a>
       </li>
+
+      {% if pagination.pageNumber < (pagination.pages.length - 1) %}
+      <li class="text-lg flex-grow current-next">
+        <a class="block text-center border border-solid border-link text-theme"
+          href="{{ pagination.hrefs[ pagination.pageNumber + 1 ] }}"
+        >{{ pagination.pageNumber + 2 }}</a>
+      </li>
+      {% endif %}
+
+      {% if (pagination.pages.length > 3) and (pagination.pageNumber < (pagination.pages.length - 3)) %}
+      <li class="text-lg flex-grow"><a class="block text-center border border-solid border-link text-theme">...</a></li>
+      {% endif %}
+
+      {% if (pagination.pages.length > 2) and (pagination.pageNumber < (pagination.pages.length - 2)) %}
+      <li class="text-lg flex-grow last">
+        <a class="block text-center border border-solid border-link text-theme"
+          href="{{ pagination.href.last }}">{{ pagination.pages.length }}</a>
+      </li>
+      {% endif %}
+      
+      {% if pagination.href.next %}
+      <li class="text-lg flex-grow next">
+        <a class="block text-center border border-solid border-link text-theme"
+          href="{{ pagination.href.next }}">»</a>
+      </li>
+      {% endif %}
     </ol>
   </nav>
+  {% endif %}
 </article>
