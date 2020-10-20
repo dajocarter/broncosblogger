@@ -16,18 +16,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        original: {
-          primary: 'var(--original--primary)',
-          alt: 'var(--original--alt)'
-        },
-        classic: {
-          primary: 'var(--classic--primary)',
-          alt: 'var(--classic--alt)'
-        },
-        current: {
-          primary: 'var(--current--primary)',
-          alt: 'var(--current--alt)'
-        }
+        theme: 'var(--theme--color__text)',
+        link: 'var(--theme--color__link)',
+        background: 'var(--theme--color__background)'
       },
       textColor: {
         theme: 'var(--theme--color__text)',
