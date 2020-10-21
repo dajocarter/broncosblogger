@@ -4,43 +4,43 @@ date: '2020-10-15'
 ---
 
 DEN @ NE
-Pick: NE
+Pick: NE ❌
 
 HOU @ TEN
-Pick: TEN
+Pick: TEN ✅
 
 CLE @ PIT
-Pick: PIT
+Pick: PIT ✅
 
 BAL @ PHI
-Pick: BAL
+Pick: BAL ✅
 
 WFT @ NYG
-Pick: NYG
+Pick: WFT ❌
 
 ATL @ MIN
-Pick: MIN
+Pick: MIN ❌
 
 DET @ JAX
-Pick: JAX
+Pick: JAX ❌
 
 CIN @ IND
-Pick: IND
+Pick: IND ✅
 
 CHI @ CAR
-Pick: CHI
+Pick: CHI ✅
 
 NYJ @ MIA
-Pick: MIA
+Pick: MIA ✅
 
 GB @ TB
-Pick: GB
+Pick: GB ❌
 
 LAR @ SF
-Pick: LAR
+Pick: LAR ❌
 
 KC @ BUF
-Pick: KC
+Pick: KC ✅
 
 ARI @ DAL
-Pick: ARI
+Pick: ARI ✅
