@@ -32,7 +32,7 @@ Trinity Benson had been talked about all training camp and he came out to play S
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">TB to TB. 🙌<a href="https://twitter.com/teddyb_h2o?ref_src=twsrc%5Etfw">@teddyb_h2o</a> finds <a href="https://twitter.com/_TheTB?ref_src=twsrc%5Etfw">@_TheTB</a> for SIX!<br><br>📺: <a href="https://twitter.com/nflnetwork?ref_src=twsrc%5Etfw">@nflnetwork</a> <a href="https://t.co/Jl4LnOJOjl">pic.twitter.com/Jl4LnOJOjl</a></p>&mdash; Denver Broncos (@Broncos) <a href="https://twitter.com/Broncos/status/1426663307625177088?ref_src=twsrc%5Etfw">August 14, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## Jer-ry Jeu-dy
-I really like Mike as the Broncos announcer, but my god, can I please get this guy calling every Broncos from now on? Seriously, nothing is better than his JER-RY JEU-DY, JER-RY JEU-DY!!!
+I really like Dave Logan as the Broncos announcer, but my god, can I please get this guy calling every Broncos from now on? Seriously, nothing is better than his JER-RY JEU-DY, JER-RY JEU-DY!!!
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">.<a href="https://twitter.com/jerryjeudy?ref_src=twsrc%5Etfw">@jerryjeudy</a> in space &gt;&gt;&gt;<br><br>📺: <a href="https://twitter.com/nflnetwork?ref_src=twsrc%5Etfw">@nflnetwork</a> <a href="https://t.co/cEYwvsQVkr">pic.twitter.com/cEYwvsQVkr</a></p>&mdash; Denver Broncos (@Broncos) <a href="https://twitter.com/Broncos/status/1426647945227632642?ref_src=twsrc%5Etfw">August 14, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
